@@ -287,6 +287,12 @@ bool SLinkedList<T>::removeItem(const T &item)
 template <class T>
 void SLinkedList<T>::clear()
 {
+    while (this->head)
+    {
+        Node *temp = this->head;
+        this->head = this->head->next;
+        delete temp;
+    }
 }
 
 int main()
